@@ -13,5 +13,14 @@ namespace AnagramasKata.Tests {
 
             call.Should().Throw<ArgumentNullException>();
         }
+
+        [Test]
+        public void return_a_list_with_same_one_character_word() {
+            var anagramsCreator = new AnagramsCreator();
+
+            var result = anagramsCreator.GetAnagrams("a");
+
+            result.Should().Contain("a");
+        }
     }
 }
