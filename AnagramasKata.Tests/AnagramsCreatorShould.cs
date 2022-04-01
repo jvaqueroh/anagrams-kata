@@ -15,7 +15,7 @@ namespace AnagramasKata.Tests {
         }
 
         [Test]
-        public void return_a_list_with_same_one_character_word() {
+        public void return_a_list_with_same_one_character_word_from_input() {
             var anagramsCreator = new AnagramsCreator();
 
             var result = anagramsCreator.GetAnagrams("a");
