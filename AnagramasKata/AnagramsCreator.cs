@@ -4,7 +4,12 @@
             if (string.IsNullOrWhiteSpace(input))
                 throw new ArgumentNullException();
 
-            return new List<string>() { new string(input.ToCharArray().Reverse().ToArray()) };
+            return new List<string>() {
+                new string(
+                    input.ToCharArray()
+                    .Reverse()
+                    .ToArray())
+            };
         }
     }
 }
