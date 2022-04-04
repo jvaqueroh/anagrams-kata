@@ -22,5 +22,14 @@ namespace AnagramasKata.Tests {
 
             result.Should().Contain("a");
         }
+
+        [Test]
+        public void return_a_list_with_the_two_characters_word_inverted() {
+            var anagransCreator = new AnagramsCreator();
+
+            var result = anagransCreator.GetAnagrams("ab");
+
+            result.Should().Contain("ba");
+        }
     }
 }
