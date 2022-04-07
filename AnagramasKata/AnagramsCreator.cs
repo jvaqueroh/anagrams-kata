@@ -5,6 +5,7 @@
                 throw new ArgumentNullException();
 
             return new List<string>() {
+                input,
                 new string(
                     input.ToCharArray()
                     .Reverse()
