@@ -33,8 +33,9 @@ namespace AnagramasKata.Tests {
             result.Should().Contain("ba");
         }
 
+        [TestCase("a", new[]{"a"})]
         [TestCase("ab", new[]{"ab", "ba"})]
-        public void result_includes_the_original_input(string input, string[] expected) {
+        public void return_all_combinations_only_once(string input, string[] expected) {
             var result = anagramsCreator.GetAnagrams(input);
 
             result.Should().BeEquivalentTo(expected);
