@@ -32,5 +32,11 @@ namespace AnagramasKata.Tests {
 
             result.Should().Contain("ba");
         }
+
+        [TestCase("ab", new[]{"ab", "ba"})]
+        public void return_all_combinations(string input, string[] expected) {
+            var result = anagramsCreator.GetAnagrams(input);
+            result.Should().BeEquivalentTo(expected);
+        }
     }
 }
