@@ -18,21 +18,7 @@ namespace AnagramasKata.Tests {
 
             call.Should().Throw<ArgumentNullException>();
         }
-
-        [Test]
-        public void return_a_list_with_same_one_character_word_from_input() {
-            var result = anagramsCreator.GetAnagrams("a");
-
-            result.Should().Contain("a");
-        }
-
-        [Test]
-        public void return_a_list_with_the_two_characters_word_inverted() {
-            var result = anagramsCreator.GetAnagrams("ab");
-
-            result.Should().Contain("ba");
-        }
-
+        
         [TestCase("a", new[]{"a"})]
         [TestCase("ab", new[]{"ab", "ba"})]
         public void return_all_combinations_only_once(string input, string[] expected) {
