@@ -14,7 +14,7 @@
                         .ToArray())
                 );
 
-            return result;
+            return result.Distinct().ToList();
         }
     }
 }
