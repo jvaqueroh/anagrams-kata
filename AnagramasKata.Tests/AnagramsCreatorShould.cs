@@ -19,9 +19,10 @@ namespace AnagramasKata.Tests {
             call.Should().Throw<ArgumentNullException>();
         }
 
-        [TestCase("a",  new[] { "a" })]
-        [TestCase("ab", new[] { "ab", "ba" })]
-        [TestCase("aa", new[] { "aa" })]
+        [TestCase("a",   new[] { "a" })]
+        [TestCase("ab",  new[] { "ab", "ba" })]
+        [TestCase("aa",  new[] { "aa" })]
+        [TestCase("abc", new[] {"abc", "acb", "bac", "bca", "cab", "cba"})]
         public void return_all_combinations_only_once(string input, string[] expected) {
             var result = anagramsCreator.GetAnagrams(input);
 
