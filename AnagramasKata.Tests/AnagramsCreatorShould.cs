@@ -31,7 +31,7 @@ namespace AnagramasKata.Tests {
         [TestCase("abcd", new[] {"abcd", "abdc", "acbd", "acdb", "adbc", "adcb",
                                  "bacd", "badc", "bcad", "bcda", "bdac", "bdca",
                                  "cabd", "cadb", "cbad", "cbda", "cdab", "cdba",
-                                 "dabc", "dacd", "dbac", "dbca", "dcab", "dcba" },
+                                 "dabc", "dacb", "dbac", "dbca", "dcab", "dcba" },
             TestName = "create anagrams for four letters input")]
         public void return_all_combinations_only_once(string input, string[] expected) {
             var result = anagramsCreator.GetAnagrams(input);

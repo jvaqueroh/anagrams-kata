@@ -10,9 +10,15 @@
                 var initial = input[i];
                 var rest = input.ToList();
                 rest.RemoveAt(i);
-                result.Add(initial + new string(rest.ToArray()));
-                rest.Reverse();
-                result.Add(initial + new string(rest.ToArray()));
+                if (input.Length < 4) {
+                    result.Add(initial + new string(rest.ToArray()));
+                    rest.Reverse();
+                    result.Add(initial + new string(rest.ToArray()));
+                }
+                else {
+                    var partialResult = GetAnagrams(new string(rest.ToArray()));
+                    result.AddRange(partialResult.Select(r => initial + r));
+                }
             }
 
             return result.Distinct().ToList();
