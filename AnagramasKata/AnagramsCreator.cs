@@ -1,6 +1,6 @@
 ﻿namespace AnagramasKata {
     public class AnagramsCreator {
-        public List<string> GetAnagrams(string input) {
+        public IEnumerable<string> GetAnagrams(string input) {
             if (string.IsNullOrWhiteSpace(input))
                 throw new ArgumentNullException(nameof(input));
 
@@ -19,7 +19,7 @@
                 }
             }
 
-            return result.Distinct().ToList();
+            return result.Distinct();
         }
 
         private static char[] GetRest(string input, int i) {
