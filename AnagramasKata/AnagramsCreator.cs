@@ -2,11 +2,11 @@
     public class AnagramsCreator {
         public List<string> GetAnagrams(string input) {
             if (string.IsNullOrWhiteSpace(input))
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(input));
 
             var result = new List<string>();
 
-            for (int i = 0; i < input.Length; i++) {
+            for (var i = 0; i < input.Length; i++) {
                 var initial = input[i];
                 var rest = input.ToList();
                 rest.RemoveAt(i);
