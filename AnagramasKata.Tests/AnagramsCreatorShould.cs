@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
 
 namespace AnagramasKata.Tests {
@@ -13,7 +12,7 @@ namespace AnagramasKata.Tests {
 
         [Test]
         public void throws_an_exception_for_an_empty_input() {
-            Action call = () => {
+            var call = () => {
                 anagramsCreator.GetAnagrams(string.Empty);
             };
 
