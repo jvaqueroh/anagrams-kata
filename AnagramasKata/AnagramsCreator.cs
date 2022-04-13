@@ -8,20 +8,24 @@
 
             for (var i = 0; i < input.Length; i++) {
                 var initial = input[i];
-                var rest = input.ToList();
-                rest.RemoveAt(i);
+                var rest = GetRest(input, i);
                 if (input.Length < 4) {
-                    result.Add(initial + new string(rest.ToArray()));
-                    rest.Reverse();
-                    result.Add(initial + new string(rest.ToArray()));
+                    result.Add(initial + new string(rest));
+                    result.Add(initial + new string(rest.Reverse().ToArray()));
                 }
                 else {
-                    var partialResult = GetAnagrams(new string(rest.ToArray()));
+                    var partialResult = GetAnagrams(new string(rest));
                     result.AddRange(partialResult.Select(r => initial + r));
                 }
             }
 
             return result.Distinct().ToList();
+        }
+
+        private static char[] GetRest(string input, int i) {
+            var rest = input.ToList();
+            rest.RemoveAt(i);
+            return rest.ToArray();
         }
     }
 }
